@@ -1,12 +1,6 @@
-import dao.DAOFacadeImpl
 import dao.DatabaseFactory
 import io.javalin.Javalin
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.withContext
-import model.Article
-import model.Articles
 import repository.ArticleRepository
 
 fun main(args: Array<String>) {
@@ -23,6 +17,16 @@ fun main(args: Array<String>) {
             ctx.json(list)
         }
     }
+
+    app.get("/testInput") {
+        ctx ->
+        runBlocking {
+            ArticleRepository().addTestArticle()
+            ctx.result("Success")
+        }
+    }
+
+
 
     app.post("/input") { ctx ->
         // some code

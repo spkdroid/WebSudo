@@ -15,4 +15,11 @@ class ArticleRepository {
             Dao.allArticles()
         }
     }
+
+    suspend fun addTestArticle() {
+        Dao.addNewArticle("Hello","World");
+        Dao.addNewArticle("Hello","World");
+    }
+
+
 }
