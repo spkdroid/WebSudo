@@ -7,12 +7,8 @@ import model.Article
 
 class ArticleRepository {
 
-    init {
-        Dao = DAOFacadeImpl()
-    }
-
     companion object {
-        var Dao:DAOFacadeImpl = TODO()
+        var Dao:DAOFacadeImpl = DAOFacadeImpl()
     }
     suspend fun getAllArticles(): List<Article> {
         return withContext(Dispatchers.IO) {
