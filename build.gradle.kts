@@ -15,6 +15,9 @@ dependencies {
     implementation("org.slf4j:slf4j-simple:2.0.5")
     implementation("io.javalin:javalin:5.4.2")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.14.2")
+    implementation("org.jetbrains.exposed", "exposed-core", "0.40.1")
+    implementation("org.jetbrains.exposed", "exposed-dao", "0.40.1")
+    implementation("org.jetbrains.exposed", "exposed-jdbc", "0.40.1")
 }
 
 tasks.test {
