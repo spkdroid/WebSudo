@@ -16,5 +16,3 @@ The project mainly aims to store articles with a header and body. The project le
 - [ ] Docker
 - [ ] CRUD
 - [ ] Code Refactor
-
-
