@@ -19,6 +19,7 @@ dependencies {
     implementation("org.jetbrains.exposed", "exposed-dao", "0.40.1")
     implementation("org.jetbrains.exposed", "exposed-jdbc", "0.40.1")
     implementation("com.h2database:h2:2.1.214")
+    implementation("org.apache.opennlp:opennlp-tools:2.2.0")
 }
 
 tasks.test {

@@ -6,11 +6,12 @@
 <img src="/Websudo.png"/>
 </p>
 
-WebSudo is a CRUD implementation using the lightweight Javalin framework. The project mainly aims to store articles with a header and body. The project leverages the Exposed SQL Kotlin framework and the h2 database.
+WebSudo is a NLP implementation using the lightweight Javalin framework. The project mainly aims to store articles with a header and body. The project leverages the Exposed SQL Kotlin framework and the h2 database.
 
 <img src="Javalin.svg" height="250" width="250">
 ### Pilot Release 
 
+- [ ] NLP Wrapper
 - [ ] Dagger
 - [ ] Docker
 - [ ] CRUD
