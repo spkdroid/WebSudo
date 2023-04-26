@@ -1,6 +1,7 @@
 import dao.DatabaseFactory
 import io.javalin.Javalin
 import kotlinx.coroutines.runBlocking
+import opennlp.tools.tokenize.SimpleTokenizer
 import repository.ArticleRepository
 
 fun main(args: Array<String>) {
@@ -18,20 +19,35 @@ fun main(args: Array<String>) {
         }
     }
 
-    app.get("/testInput") {
-        ctx ->
+    app.get("/testInput") { ctx ->
         runBlocking {
             ArticleRepository().addTestArticle()
             ctx.result("Success")
         }
     }
 
-
-
     app.post("/input") { ctx ->
         // some code
         ctx.status(201)
     }
+
+    /**
+     *  Simple tokenizer
+     *
+     *  inputString as the token
+     *
+     *  @Return json response of the string tokens.
+     *
+     */
+    app.post("/text/token") { ctx ->
+        val inputString = ctx.formParam("inputString")
+        val simpleTokenizer = SimpleTokenizer.INSTANCE
+        val tokens: Array<String> = simpleTokenizer
+            .tokenize(inputString)
+        ctx.json(tokens)
+    }
+
+
 }
 
 fun initDatabase() {
