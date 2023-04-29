@@ -39,15 +39,13 @@ fun main(args: Array<String>) {
      *  @Return json response of the string tokens.
      *
      */
-    app.post("/text/token") { ctx ->
-        val inputString = ctx.formParam("inputString")
+    app.get("/text/token/{inputString}") { ctx ->
+        val inputString:String = ctx.pathParam("inputString")
         val simpleTokenizer = SimpleTokenizer.INSTANCE
         val tokens: Array<String> = simpleTokenizer
             .tokenize(inputString)
         ctx.json(tokens)
     }
-
-
 }
 
 fun initDatabase() {
